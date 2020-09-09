@@ -2,6 +2,8 @@ package controller;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.sql.Date;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,10 +29,11 @@ public class AddNewBlogController extends HttpServlet {
 		System.out.println("Entering do post");
 		String blogTitle = request.getParameter("title");
 		String blogDescription = request.getParameter("message");
-		LocalDate postedOn = LocalDate.now();
+		long millis=System.currentTimeMillis();
+		Date postedOn = new Date(millis);
 		System.out.println(blogTitle);
 		Blog blog = new Blog();
-	//	blog.setBlogId(++i);
+		blog.setBlogId(++i);
 		blog.setBlogTitle(blogTitle);
 		blog.setBlogDescription(blogDescription);
 		blog.setPostedOn(postedOn);

@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import businesslogic.ValidateUser;
 import dao.UserDAO;
-import model.User;
 
 
 
